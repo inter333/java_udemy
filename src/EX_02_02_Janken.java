@@ -20,7 +20,6 @@ public class EX_02_02_Janken {
         rf.checkHand(p1.getName(),p1.getHandStatus());
         rf.checkHand(p2.getName(),p2.getHandStatus());
 
-
         //シナリオ④
         rf.judgeJanken(p1,p2);
     }

@@ -25,33 +25,25 @@ class Ex_02_01_Janken {
         //シナリオ④
         System.out.println("結果は・・・");
 
-        if( (p1.handStatus).equals( p2.handStatus ) ){
-
+        if((p1.handStatus).equals( p2.handStatus )){
             //あいこの場合
             System.out.println("あいこ！勝負つかず！");
 
-        }else if(     (p1.handStatus.equals( ROCK ) && p2.handStatus.equals( SCISSORS ))
+        }else if((p1.handStatus.equals( ROCK ) && p2.handStatus.equals( SCISSORS ))
                 || (p1.handStatus.equals( SCISSORS ) && p2.handStatus.equals( PAPER ))
                 || (p1.handStatus.equals( PAPER ) && p2.handStatus.equals( ROCK ))  ) {
 
             //プレイヤー1が勝利した場合
             System.out.println(p1.name + "さんの勝利！");
 
-        }else if(     (p2.handStatus.equals( ROCK ) && p1.handStatus.equals( SCISSORS ))
+        } else if ((p2.handStatus.equals( ROCK ) && p1.handStatus.equals( SCISSORS ))
                 || (p2.handStatus.equals( SCISSORS ) && p1.handStatus.equals( PAPER ))
                 || (p2.handStatus.equals( PAPER ) && p1.handStatus.equals( ROCK ))  ) {
-
             //プレイヤー2が勝利した場合
             System.out.println(p2.name + "さんの勝利！");
-
-        }else{
-
+        } else {
             //不正な場合はエラーメッセージを出力
             System.out.println("[ERROR]ジャンケンの判定が不正です。");
-
         }
-
-
     }
-
 }

@@ -33,6 +33,4 @@ class Ex_02_01_Player {
                 break;
         }
     }
-
-
 }

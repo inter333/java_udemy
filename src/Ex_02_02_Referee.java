@@ -5,8 +5,7 @@ public class Ex_02_02_Referee {
     private final String PAPER = "パー" ;     //ジャンケンの手（パー）
 
     //フィールド
-    private String name       ;   //名前
-
+    private String name ;   //名前
 
     //コンストラクタ
     public Ex_02_02_Referee(String nm){
@@ -22,15 +21,18 @@ public class Ex_02_02_Referee {
     }
 
     public void checkHand(String nm, String hs){
-        if ((hs).equals(ROCK)){
-            messageReferee(nm + "さんの手はグーでした！");
-        } else if ((hs).equals(SCISSORS)) {
-            messageReferee(nm + "さんの手はチョキでした！");
-        } else if ((hs).equals(PAPER)) {
-            messageReferee(nm + "さんの手はパーでした！");
-        }
-        else {
-            System.out.println("じゃんけんの判定が無効です");
+        switch (hs) {
+            case ROCK:
+                messageReferee(nm + "さんの手はグーでした！");
+                break;
+            case SCISSORS:
+                messageReferee(nm + "さんの手はチョキでした！");
+                break;
+            case PAPER:
+                messageReferee(nm + "さんの手はパーでした！");
+                break;
+            default:
+                System.out.println("じゃんけんの判定が無効です");
         }
     }
 
@@ -52,22 +54,12 @@ public class Ex_02_02_Referee {
         }else if(     (p2.getHandStatus().equals( ROCK ) && p1.getHandStatus().equals( SCISSORS ))
                 || (p2.getHandStatus().equals( SCISSORS ) && p1.getHandStatus().equals( PAPER ))
                 || (p2.getHandStatus().equals( PAPER ) && p1.getHandStatus().equals( ROCK ))  ) {
-
             //プレイヤー2が勝利した場合
             System.out.println(p2.getName() + "さんの勝利！");
-
         }else{
-
             //不正な場合はエラーメッセージを出力
             System.out.println("[ERROR]ジャンケンの判定が不正です。");
-
         }
-
-
-    }
-
-    public String getName(){
-        return this.name;
     }
 }
 
